@@ -7,7 +7,7 @@ user = get_user_model()
 
 
 class UserImage(models.Model):
-    user = models.ForeignKey(user, on_delete=models.SET_NULL, default=1, null=True, blank=True)
+    user = models.ForeignKey(user, on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(upload_to='images/%Y/%m.%d/', null=True, blank=True)
     upload_date = models.DateTimeField(default=timezone.now())
     color = models.CharField(max_length=255, default='Not defined')
